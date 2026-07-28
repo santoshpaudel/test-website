@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Main navigation bar */
+        .navbar {
+            background-color: #24292f;
+        }
+
+        .menu {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .menu > li {
+            position: relative;
+        }
+
+        .menu a {
+            display: block;
+            padding: 16px 22px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu > li > a:hover {
+            background-color: #0969da;
+        }
+
+        /* Flyout dropdown menu */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 210px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .submenu li {
+            position: relative;
+        }
+
+        .submenu a {
+            padding: 12px 16px;
+            color: #24292f;
+            white-space: nowrap;
+        }
+
+        .submenu a:hover {
+            background-color: #eaeef2;
+            color: #0969da;
+        }
+
+        /* Show submenu when hovering */
+        .dropdown:hover > .submenu {
+            display: block;
+        }
+
+        /* Second-level flyout menu */
+        .submenu .submenu {
+            top: 0;
+            left: 100%;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        /* Basic mobile layout */
+        @media (max-width: 700px) {
+            .menu {
+                flex-direction: column;
+            }
+
+            .submenu,
+            .submenu .submenu {
+                position: static;
+                min-width: 100%;
+                box-shadow: none;
+            }
+
+            .dropdown:hover > .submenu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="menu">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">Places ▾</a>
+
+                <ul class="submenu">
+                    <li><a href="austin.html">Austin</a></li>
+                    <li><a href="dallas.html">Dallas</a></li>
+                    <li><a href="new-york.html">New York</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">International ▸</a>
+
+                        <ul class="submenu">
+                            <li><a href="kathmandu.html">Kathmandu</a></li>
+                            <li><a href="london.html">London</a></li>
+                            <li><a href="tokyo.html">Tokyo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">People ▾</a>
+
+                <ul class="submenu">
+                    <li><a href="santosh.html">Santosh Paudel</a></li>
+                    <li><a href="john.html">John Smith</a></li>
+                    <li><a href="maria.html">Maria Garcia</a></li>
+                    <li><a href="david.html">David Wilson</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">Pages ▾</a>
+
+                <ul class="submenu">
+                    <li><a href="page1.html">Page 1</a></li>
+                    <li><a href="page2.html">Page 2</a></li>
+                    <li><a href="redirect.html">Redirect Page</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="about.html">About</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1>Home Page</h1>
+        <p>This is the GitHub Pages home page.</p>
+        <p>Move your mouse over <strong>Places</strong>, <strong>People</strong>, or <strong>Pages</strong> to open the flyout menus.</p>
+    </main>
+
+</body>
+</html>
